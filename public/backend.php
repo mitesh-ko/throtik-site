@@ -30,13 +30,13 @@ $email = $_POST['email'] ?? '';
 $message = $_POST['message'] ?? '';
 
 // Validate name
-if (empty($name)) {
-    http_response_code(500);
-    die('Name is required');
-} elseif (strlen($name) > 190) {
-    http_response_code(500);
-    die('Name must not exceed 190 characters');
-}
+// if (empty($name)) {
+//     http_response_code(500);
+//     die('Name is required');
+// } elseif (strlen($name) > 190) {
+//     http_response_code(500);
+//     die('Name must not exceed 190 characters');
+// }
 
 // Validate email
 if (empty($email)) {
@@ -50,13 +50,13 @@ if (empty($email)) {
     die('Email must not exceed 190 characters');
 }
 
-if (empty($message)) {
-    http_response_code(500);
-    die('Message is required');
-} elseif (strlen($email) > 2500) {
-    http_response_code(500);
-    die('Email must not exceed 2500 characters');
-}
+// if (empty($message)) {
+//     http_response_code(500);
+//     die('Message is required');
+// } elseif (strlen($email) > 2500) {
+//     http_response_code(500);
+//     die('Email must not exceed 2500 characters');
+// }
 
 // SQL query to insert data
 $sql = "INSERT INTO user_request (name, email, message) VALUES (?, ?, ?)";
