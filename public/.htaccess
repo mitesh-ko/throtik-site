@@ -1,0 +1,24 @@
+RewriteEngine On
+
+# Block direct access to backend.php and show 404.html
+RewriteCond %{THE_REQUEST} \s/backend\.php [NC]
+RewriteRule ^backend\.php$ /404.html [L]
+
+# Block direct access to index.html and show 404.html
+RewriteCond %{THE_REQUEST} \s/index\.html [NC]
+RewriteRule ^index\.html$ /404.html [L]
+
+# Block direct access to email.php and show 404.html
+RewriteCond %{THE_REQUEST} \s/email\.php [NC]
+RewriteRule ^email\.php$ /404.html [L]
+
+# Custom error pages for 404 and 403
+ErrorDocument 404 /404.html
+ErrorDocument 403 /403.html
+
+# If it's not an actual file or directory
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Redirect /get-in-touch to backend.php
+RewriteRule ^get-in-touch$ backend.php [L]
