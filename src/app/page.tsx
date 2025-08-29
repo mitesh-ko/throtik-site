@@ -134,7 +134,7 @@ export default function Home() {
                 </motion.div>
 
                 <form onSubmit={submit}>
-                    <div className="mt-10">
+                    <div className="mt-10 mb-2">
                         {form.message.success && (
                             <div className="text-green-800">
                                 {form.message.success}
@@ -156,6 +156,7 @@ export default function Home() {
                         <input
                             type="text"
                             placeholder="your.email@example.com"
+                            value={form.data.email}
                             onChange={(e) => {
                                 setForm({ ...form, data: { ...form.data, email: e.target.value } })
                             }}

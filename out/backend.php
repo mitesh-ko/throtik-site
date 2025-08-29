@@ -3,7 +3,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-require_once './email.php';
+// require_once './email.php';
 
 // Database credentials
 $host = "localhost"; // or your DB host
